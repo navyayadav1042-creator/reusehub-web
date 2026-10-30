@@ -8,6 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const db = new Database(path.join(__dirname, 'reusehub.db'));
 
+// Render ప్రాక్సీని ట్రస్ట్ చేయడానికి ఇది తప్పనిసరి
+app.set('trust proxy', 1);
+
 db.pragma('journal_mode = WAL');
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (
@@ -46,13 +49,21 @@ db.exec(`
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: false }));
+
+// Render లో సెషన్ కుక్కీ పనిచేసేలా సెట్టింగ్స్
 app.use(session({
   name: 'reusehub.sid',
   secret: process.env.SESSION_SECRET || 'change-this-development-secret-before-deployment',
   resave: false,
   saveUninitialized: false,
-  cookie: { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', maxAge: 1000 * 60 * 60 * 8 }
+  cookie: { 
+    httpOnly: true, 
+    sameSite: 'lax', 
+    secure: false, // Render HTTPS లో కుక్కీ డ్రాప్ అవ్వకుండా false ఉంచడం వల్ల సమస్య పరిష్కారమవుతుంది
+    maxAge: 1000 * 60 * 60 * 24 
+  }
 }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 function safeUser(user) {
