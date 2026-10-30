@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101828" />
+  <title>ReuseHub — Share More. Waste Less.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">♻️ Give useful things a second life — join your local sharing community</div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="ReuseHub home"><span class="brand-icon">↻</span><span>reuse<span class="brand-green">hub</span></span></a>
+    <nav><a href="#explore">Explore items</a><a href="#how">How it works</a></nav>
+    <div class="nav-actions" id="navActions"><button class="btn btn-ghost" id="loginBtn">Log in</button><button class="btn btn-dark" id="signupBtn">Join free <span>↗</span></button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR COMMUNITY, CIRCULAR</div>
+        <h1>Good things<br>deserve a <span>second life.</span></h1>
+        <p class="hero-sub">Pass on what you don't need. Find what you do. ReuseHub makes sharing useful things with your community simple.</p>
+        <div class="hero-actions"><button class="btn btn-green btn-large" id="exploreBtn">Explore items <span>→</span></button><button class="btn btn-outline btn-large" id="heroGiveBtn">＋ Give an item</button></div>
+        <div class="social-proof"><div class="avatar-stack"><span>👩🏽</span><span>👨🏻</span><span>👩🏼</span><span>🧑🏾</span></div><div><strong>A little sharing goes a long way</strong><small>Build a more thoughtful community, one item at a time.</small></div></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of reusable items">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-note note-top"><span class="note-emoji">📚</span><div><strong>Books, not dust</strong><small>Pass knowledge on</small></div></div>
+        <div class="plant-pot"><div class="plant-leaf leaf-a"></div><div class="plant-leaf leaf-b"></div><div class="plant-leaf leaf-c"></div><div class="plant-stem"></div><div class="pot"></div></div>
+        <div class="book book-one"><span>THE ART OF</span><strong>LESS</strong></div><div class="book book-two"><span>small steps</span><strong>BIG CHANGE</strong></div><div class="book book-three"><span>GROW</span></div>
+        <div class="art-note note-bottom"><span class="note-emoji">✨</span><div><strong>Less waste, more good</strong><small>Reuse. Share. Repeat.</small></div></div>
+        <div class="sparkle sparkle-a">✳</div><div class="sparkle sparkle-b">✦</div>
+      </div>
+    </section>
+
+    <section class="impact wrap"><div class="impact-label"><span class="impact-dot"></span> SMALL ACTIONS. REAL IMPACT.</div><div class="impact-item"><strong id="itemCount">0</strong><span>items shared</span></div><div class="impact-item"><strong id="memberCount">0</strong><span>community members</span></div><div class="impact-item"><strong>∞</strong><span>possibilities to reuse</span></div></section>
+
+    <section class="explore-section" id="explore"><div class="wrap">
+      <div class="section-heading"><div><div class="eyebrow">THE COMMUNITY SHELF</div><h2>Find your next <span>favourite.</span></h2><p>Good finds, shared by people around you.</p></div><button class="btn btn-outline" id="postTopBtn">＋ Post an item</button></div>
+      <div class="search-row"><label class="search-box"><span>⌕</span><input id="searchInput" placeholder="Search books, gadgets, clothes..." aria-label="Search items"><kbd>↵</kbd></label><select id="categoryFilter" aria-label="Filter category"><option>All</option><option>Books</option><option>Clothing</option><option>Electronics</option><option>Home</option><option>Sports</option><option>Other</option></select></div>
+      <div class="category-pills" id="categoryPills"><button class="pill active" data-category="All">✦ All items</button><button class="pill" data-category="Books">📚 Books</button><button class="pill" data-category="Clothing">👕 Clothing</button><button class="pill" data-category="Electronics">🎧 Electronics</button><button class="pill" data-category="Home">🏡 Home</button><button class="pill" data-category="Sports">⚽ Sports</button><button class="pill" data-category="Other">✳ Other</button></div>
+      <div id="listingGrid" class="listing-grid"><div class="loading-card">Loading community items…</div></div>
+      <div id="emptyState" class="empty-state hidden"><div>🌱</div><h3>No items found just yet</h3><p>Try another search, or be the first to share something.</p><button class="btn btn-green" id="emptyPostBtn">Post an item</button></div>
+    </div></section>
+
+    <section class="how-section wrap" id="how"><div class="section-heading centered"><div><div class="eyebrow">THREE LITTLE STEPS</div><h2>Sharing is <span>that simple.</span></h2><p>A better way to pass good things around.</p></div></div><div class="steps"><article class="step-card"><div class="step-icon icon-lilac">📸</div><span class="step-number">01 / LIST IT</span><h3>Give it a new home</h3><p>Post an item you no longer need. Add a photo link, details, and whether you're donating or exchanging.</p></article><article class="step-card"><div class="step-icon icon-yellow">🔎</div><span class="step-number">02 / FIND IT</span><h3>Discover useful finds</h3><p>Browse community listings, search by category, and find something that fits your needs.</p></article><article class="step-card"><div class="step-icon icon-green">🤝</div><span class="step-number">03 / PASS IT ON</span><h3>Connect and share</h3><p>Send a request to the owner. Agree on a safe, public handover and give that item a second life.</p></article></div></section>
+    <section class="cta wrap"><div><span class="cta-leaf">✳</span><h2>Have something good<br>to pass on?</h2><p>Someone nearby might need exactly what you have.</p></div><button class="btn btn-dark btn-large" id="ctaPostBtn">Share an item <span>↗</span></button><div class="cta-decoration">↻</div></section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="#home"><span class="brand-icon">↻</span><span>reuse<span class="brand-green">hub</span></span></a><p>Made for sharing. Built for a less wasteful world.</p><span>© <span id="year"></span> ReuseHub</span></footer>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
